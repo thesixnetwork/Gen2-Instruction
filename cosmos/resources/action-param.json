@@ -1,0 +1,9 @@
+{
+    "nft_schema_code": "sixnetwork.develop_v220",
+    "token_id": "1",
+    "action": "start_mission",
+    "params":"[]",
+    "expired_at": "2022-10-31T00:00:00.000Z",
+    "ref_id": "tk1_start_mission_1",
+    "on_behalf_of": ""
+}
