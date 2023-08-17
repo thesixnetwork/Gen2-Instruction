@@ -18,7 +18,7 @@ npx hardhat run scripts/deploy.ts
 npx hardhat compile
 ```
 
-## To run the tests:
+## To run the tests
 
 ```shell
 npx hardhat test
