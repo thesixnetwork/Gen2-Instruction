@@ -10,7 +10,7 @@ import exmapleSchema from "../resources/nft-schema-example.json";
 
 const ORG_NAME = "MY_ORG_NAME";
 const SCHEMA_NAME = "MY_SCHEMA_NAME";
-const schemaCode = `${ORG_NAME}/${SCHEMA_NAME}`;
+const schemaCode = `${ORG_NAME}.${SCHEMA_NAME}`;
 exmapleSchema.code = schemaCode
 
 export const Deploy = async () => {

@@ -10,7 +10,7 @@ dotenv.config();
 
 const ORG_NAME = "MY_ORG_NAME";
 const SCHEMA_NAME = "MY_SCHEMA_NAME";
-const schemaCode = `${ORG_NAME}/${SCHEMA_NAME}`;
+const schemaCode = `${ORG_NAME}.${SCHEMA_NAME}`;
 // replace with your own schema code
 ORIGINAL_METADATA.nft_schema_code = schemaCode;
 

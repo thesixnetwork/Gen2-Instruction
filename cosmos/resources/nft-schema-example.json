@@ -109,8 +109,7 @@
       {
         "name": "mission",
         "desc": "Do mission",
-        "params": [
-        ],
+        "params": [],
         "when": "meta.GetBoolean('is_checked_in') == true",
         "then": [
           "meta.SetFloat('points', meta.GetFloat('points') + 70.0)"
