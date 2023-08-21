@@ -3,9 +3,9 @@
   "name": "EXAMPLE_SCHEMA",
   "owner": "0xNFTOWNER",
   "origin_data": {
-    "origin_base_uri": "https://ipfsgw.sixnetwork.io/ipfs/QmZvQMoiZzLdcdFAoWYj8tMchZNsyL3qMBKmxjUU164ibL/",
+    "origin_base_uri": "",
     "uri_retrieval_method": "BASE",
-    "origin_chain": "SIXNET",
+    "origin_chain": "FIVENET",
     "origin_contract_address": "0x40df0C834CE7549e9234D11525aD1f7E7CF48E88",
     "attribute_overriding": "CHAIN",
     "metadata_format": "opensea",
@@ -21,62 +21,12 @@
         }
       },
       {
-        "name": "caption",
+        "name": "tier",
         "data_type": "string",
         "display_value_field": "value",
         "display_option": {
           "opensea": {
-            "trait_type": "Caption"
-          }
-        }
-      },
-      {
-        "name": "skin",
-        "data_type": "string",
-        "display_value_field": "value",
-        "display_option": {
-          "opensea": {
-            "trait_type": "Skin"
-          }
-        }
-      },
-      {
-        "name": "hair",
-        "data_type": "string",
-        "display_value_field": "value",
-        "display_option": {
-          "opensea": {
-            "trait_type": "Hair"
-          }
-        }
-      },
-      {
-        "name": "mouth",
-        "data_type": "string",
-        "display_value_field": "value",
-        "display_option": {
-          "opensea": {
-            "trait_type": "Mouth"
-          }
-        }
-      },
-      {
-        "name": "costume",
-        "data_type": "string",
-        "display_value_field": "value",
-        "display_option": {
-          "opensea": {
-            "trait_type": "Costume"
-          }
-        }
-      },
-      {
-        "name": "eyes",
-        "data_type": "string",
-        "display_value_field": "value",
-        "display_option": {
-          "opensea": {
-            "trait_type": "Eyes"
+            "trait_type": "Tier"
           }
         }
       }
@@ -86,100 +36,10 @@
     "reveal_required": true,
     "reveal_secret": "",
     "nft_attributes": [
-      {
-        "name": "redemtion_tumbler",
-        "default_mint_value": {
-          "float_attribute_value": {
-            "value": 600.0
-          }
-        },
-        "data_type": "float",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "opensea": {
-            "trait_type": "Tumbler Price"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": true
-      },
-      {
-        "name": "redemtion_cap",
-        "default_mint_value": {
-          "float_attribute_value": {
-            "value": 300.0
-          }
-        },
-        "data_type": "float",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "opensea": {
-            "trait_type": "Cap Price"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": true
-      },
-      {
-        "name": "redemtion_namecard",
-        "default_mint_value": {
-          "float_attribute_value": {
-            "value": 200.0
-          }
-        },
-        "data_type": "float",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "opensea": {
-            "trait_type": "Namecard Price"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": true
-      },
-      {
-        "name": "redemtion_g_namecard",
-        "default_mint_value": {
-          "float_attribute_value": {
-            "value": 200.0
-          }
-        },
-        "data_type": "float",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "opensea": {
-            "trait_type": "Geo-Namecard Price"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": true
-      },
-      {
-        "name": "redemtion_tshirt",
-        "default_mint_value": {
-          "float_attribute_value": {
-            "value": 250.0
-          }
-        },
-        "data_type": "float",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "opensea": {
-            "trait_type": "T-Shirt Price"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": true
-      }
     ],
     "token_attributes": [
       {
-        "name": "caption",
+        "name": "tier",
         "default_mint_value": {
           "string_attribute_value": {
             "value": ""
@@ -190,7 +50,7 @@
         "display_value_field": "value",
         "display_option": {
           "opensea": {
-            "trait_type": "Caption"
+            "trait_type": "Tier"
           }
         },
         "hidden_overide": false,
@@ -215,7 +75,7 @@
         "hidden_to_marketplace": false
       },
       {
-        "name": "techsauce_booth",
+        "name": "is_checked_in",
         "default_mint_value": {
           "boolean_attribute_value": {
             "value": false
@@ -228,385 +88,7 @@
           "bool_true_value": "Yes",
           "bool_false_value": "No",
           "opensea": {
-            "trait_type": "Booth Techsauce"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "bussiness_zone",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Bussiness Matching Zone"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "relax_zone",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Relaxing Zone"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "exp_zone",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Experiencing Zone"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "stage_count",
-        "default_mint_value": {
-          "number_attribute_value": {
-            "value": 0
-          }
-        },
-        "data_type": "number",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Attend Stage"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "stage_1",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Main Stage"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "stage_2",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Climate Tech/FinTech Stage"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "stage_3",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "FoodTech/ HealthTech/ Starup Stage"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "stage_4",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Digital Tranformation Stage"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "stage_5",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Corporate Innovation/ Web3 Stage"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "exhibition_count",
-        "default_mint_value": {
-          "number_attribute_value": {
-            "value": 0
-          }
-        },
-        "data_type": "number",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Exhibition Zone"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "exhibition_a",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Exhibition Zone A"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "exhibition_b",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Exhibition Zone B"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "exhibition_c",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Exhibition Zone C"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "cvc_zone",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "CVC Zone"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "after_party_claimed",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Claimed After Party Privileges"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "voucher_claimed",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Claimed Voucher Privileges"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "minor_count",
-        "default_mint_value": {
-          "float_attribute_value": {
-            "value": 0.0
-          }
-        },
-        "data_type": "float",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Number Of Minors events"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": false
-      },
-      {
-        "name": "stage_points",
-        "default_mint_value": {
-          "float_attribute_value": {
-            "value": 0
-          }
-        },
-        "data_type": "float",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "opensea": {
-            "trait_type": "Points From Stage"
-          }
-        },
-        "hidden_overide": false,
-        "hidden_to_marketplace": true
-      },
-      {
-        "name": "redemtion_used",
-        "default_mint_value": {
-          "boolean_attribute_value": {
-            "value": false
-          }
-        },
-        "data_type": "boolean",
-        "required": true,
-        "display_value_field": "value",
-        "display_option": {
-          "bool_true_value": "Yes",
-          "bool_false_value": "No",
-          "opensea": {
-            "trait_type": "Redemption Used"
+            "trait_type": "Checked In"
           }
         },
         "hidden_overide": false,
@@ -616,141 +98,33 @@
     "actions": [
       {
         "name": "check_in",
-        "desc": "Attend to TechSauce Booth",
+        "desc": "Check In to Event",
         "params": [],
-        "when": "meta.GetBoolean('techsauce_booth') == false",
+        "when": "meta.GetBoolean('is_checked_in') == false",
         "then": [
           "meta.SetFloat('points', meta.GetFloat('points') + 50.0)",
-          "meta.SetBoolean('techsauce_booth', true)",
-          "max_minor = Max(meta.GetFloat('minor_count')-5.0,-1.0)",
-          "meta.SetFloat('minor_count', meta.GetFloat('minor_count')+Abs(max_minor))"
+          "meta.SetBoolean('is_checked_in', true)"
         ]
       },
       {
-        "name": "attend_zone",
-        "desc": "Attend to zone",
+        "name": "mission",
+        "desc": "Do mission",
         "params": [
-          {
-            "name": "zone",
-            "desc": "zone attribute",
-            "data_type": "string",
-            "required": true,
-            "default_value": ""
-          }
         ],
-        "when": "meta.GetBoolean(params['zone'].GetString()) == false",
+        "when": "meta.GetBoolean('is_checked_in') == true",
         "then": [
-          "meta.SetFloat('points', meta.GetFloat('points') + 70.0)",
-          "meta.SetBoolean(params['zone'].GetString(), true)",
-          "max_minor = Max(meta.GetFloat('minor_count')-5.0,-1.0)",
-          "meta.SetFloat('minor_count', meta.GetFloat('minor_count')+Abs(max_minor))"
+          "meta.SetFloat('points', meta.GetFloat('points') + 70.0)"
         ]
       },
       {
-        "name": "attend_exhibition",
-        "desc": "Attend partner exhibition",
+        "name": "change_tier",
+        "desc": "Change Tier",
         "params": [
-          {
-            "name": "exhibition",
-            "desc": "exhibition attribute",
-            "data_type": "string",
-            "required": true,
-            "default_value": ""
-          }
         ],
-        "when": "meta.GetBoolean(params['exhibition'].GetString()) == false",
+        "when": "meta.GetBoolean('is_checked_in') == true",
         "then": [
-          "meta.SetFloat('points', meta.GetFloat('points') + 50.0)",
-          "meta.SetBoolean(params['exhibition'].GetString(), true)",
-          "meta.SetNumber('exhibition_count', meta.GetNumber('exhibition_count') + 1)",
-          "actual_exhibition_count = meta.GetNumber('exhibition_count') + 1",
-          "booth_count = Max(actual_exhibition_count-2.0,0.0)",
-          "max_minor = Max(meta.GetFloat('minor_count')-5.0,0-booth_count)",
-          "meta.SetFloat('minor_count', meta.GetFloat('minor_count')+Abs(max_minor))"
+          "meta.SetString('tier', 'gold')"
         ]
-      },
-      {
-        "name": "attend_stage",
-        "desc": "Attend stage event",
-        "params": [
-          {
-            "name": "stage",
-            "desc": "Stage attribute",
-            "data_type": "string",
-            "required": true,
-            "default_value": ""
-          }
-        ],
-        "when": "meta.GetBoolean(params['stage'].GetString()) == false",
-        "then": [
-          "max_ = Max(meta.GetFloat('stage_points')-400.0,-100.0)",
-          "meta.SetFloat('stage_points', meta.GetFloat('stage_points')+Abs(max_))",
-          "meta.SetFloat('points', meta.GetFloat('points')+Abs(max_))",
-          "meta.SetBoolean(params['stage'].GetString(), true)",
-          "meta.SetNumber('stage_count', meta.GetNumber('stage_count') + 1)"
-        ]
-      },
-      {
-        "name": "redeem_prize",
-        "desc": "Redemtion points for prize",
-        "params": [
-          {
-            "name": "stock",
-            "desc": "redemtion stock",
-            "data_type": "string",
-            "required": true,
-            "default_value": ""
-          }
-        ],
-        "when": "meta.GetString('caption') != 'Staff' && meta.GetString('caption') != 'Organizer' && meta.GetBoolean('redemtion_used') == false && meta.GetFloat('points') >= meta.GetFloat('redemtion_'+ params['stock'].GetString())",
-        "then": [
-          "meta.SetBoolean('redemtion_used', true)",
-          "meta.SetFloat('points', meta.GetFloat('points') - meta.GetFloat('redemtion_'+ params['stock'].GetString()))"
-        ]
-      },
-      {
-        "name": "claim_after_party",
-        "desc": "Claim After Party",
-        "params": [],
-        "when": "(meta.GetString('caption') == 'VIP' || meta.GetString('caption') == 'Speaker'|| meta.GetString('caption') == 'Investor') && meta.GetBoolean('after_party_claimed') == false || meta.GetString('caption') != 'Staff' && meta.GetString('caption') != 'Organizer' && meta.GetBoolean('after_party_claimed') == false && meta.GetNumber('stage_count') >= 4 && meta.GetFloat('minor_count') >= 4.0",
-        "then": [
-          "meta.SetBoolean('after_party_claimed', true)"
-        ]
-      },
-      {
-        "name": "claim_voucher",
-        "desc": "Voucher Redeemtion",
-        "params": [],
-        "when": "meta.GetString('caption') != 'Staff' && meta.GetString('caption') != 'Organizer' && meta.GetBoolean('voucher_claimed') == false",
-        "then": [
-          "meta.SetBoolean('voucher_claimed', true)"
-        ]
-      },
-      {
-        "name": "change_price",
-        "desc": "Change Price of Redemtion",
-        "params": [
-          {
-            "name": "stock",
-            "desc": "redemtion stock",
-            "data_type": "string",
-            "required": true,
-            "default_value": ""
-          },
-          {
-            "name": "points",
-            "desc": "New Point Value",
-            "data_type": "number",
-            "required": true,
-            "default_value": ""
-          }
-        ],
-        "when": "meta.GetString('caption') == 'Staff' || meta.GetString('caption') == 'Organizer'",
-        "then": [
-          "new_points = params['points'].GetNumber()",
-          "meta.SetFloat(params['stock'].GetString(), 0.0 + new_points)"
-        ],
-        "allowed_actioner": "ALLOWED_ACTIONER_SYSTEM_ONLY"
       }
     ],
     "nft_attributes_value": []

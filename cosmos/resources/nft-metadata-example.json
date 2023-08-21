@@ -15,77 +15,20 @@
       "hidden_to_marketplace": false
     },
     {
-      "name": "caption",
+      "name": "tier",
       "string_attribute_value": {
-        "value": "Exhibitor"
-      },
-      "hidden_to_marketplace": false
-    },
-    {
-      "name": "skin",
-      "string_attribute_value": {
-        "value": "Rainbow"
-      },
-      "hidden_to_marketplace": false
-    },
-    {
-      "name": "hair",
-      "string_attribute_value": {
-        "value": "Medium_Purple"
-      },
-      "hidden_to_marketplace": false
-    },
-    {
-      "name": "mouth",
-      "string_attribute_value": {
-        "value": "Mouth_D"
-      },
-      "hidden_to_marketplace": false
-    },
-    {
-      "name": "eyes",
-      "string_attribute_value": {
-        "value": "Eye Mask"
-      },
-      "hidden_to_marketplace": false
-    },
-    {
-      "name": "costume",
-      "string_attribute_value": {
-        "value": "Exhibitor_E"
+        "value": "Normal"
       },
       "hidden_to_marketplace": false
     }
   ],
   "onchain_attributes": [
     {
-      "name": "caption",
+      "name": "tier",
       "string_attribute_value": {
-        "value": "Exhibitor"
-      },
-      "hidden_to_marketplace": false
-    },
-    {
-      "name": "minor_count",
-      "float_attribute_value": {
-        "value": 0
-      },
-      "hidden_to_marketplace": false
-    },
-    {
-      "name": "stage_points",
-      "float_attribute_value": {
-        "value": 0
-      },
-      "hidden_to_marketplace": true
-    },
-    {
-      "name":"after_party_claimed",
-      "boolean_attribute_value": {
-        "value": false
+        "value": "Normal"
       },
       "hidden_to_marketplace": false
     }
-
   ]
 }
