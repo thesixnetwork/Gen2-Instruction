@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@cosmjs/stargate": "^0.31.1",
+    "@sixnetwork/six-data-chain-sdk": "^3.4.1",
+    "uuid": "^9.0.0"
+  }
+}

@@ -1,0 +1,77 @@
+{
+    "code": "bank.concert_ticket.v0.01",
+    "name": "Gen2 Concert",
+    "owner": "0xNFTOWNER",
+    "origin_data": {
+        "origin_base_uri": "",
+        "uri_retrieval_method": "TOKEN",
+        "origin_chain": "FIVENET",
+        "origin_contract_address": "0x25c90C6545dE44d41fF7071065FBadB78a6De57d",
+        "attribute_overriding": "CHAIN",
+        "metadata_format": "opensea",
+        "origin_attributes": []
+    },
+    "onchain_data": {
+        "reveal_required": true,
+        "reveal_secret": "",
+        "nft_attributes": [],
+        "token_attributes": [
+            {
+                "name": "access_zone1",
+                "default_mint_value": {
+                    "boolean_attribute_value": {
+                        "value": false
+                    }
+                },
+                "data_type": "boolean",
+                "required": true,
+                "display_value_field": "value",
+                "display_option": {
+                    "bool_true_value": "Yes",
+                    "bool_false_value": "No",
+                    "opensea": {
+                        "trait_type": "access_zone1"
+                    }
+                },
+                "hidden_overide": false,
+                "hidden_to_marketplace": false
+            },
+            {
+                "name": "checked_in_zone1",
+                "default_mint_value": {
+                    "boolean_attribute_value": {
+                        "value": false
+                    }
+                },
+                "data_type": "boolean",
+                "required": true,
+                "display_value_field": "value",
+                "display_option": {
+                    "bool_true_value": "Yes",
+                    "bool_false_value": "No",
+                    "opensea": {
+                        "trait_type": "Checked In Zone1"
+                    }
+                },
+                "hidden_overide": false,
+                "hidden_to_marketplace": false
+            }
+        ],
+        "actions": [{
+                "name": "check_in_zone1",
+                "desc": "Check In to Event",
+                "params": [],
+                "when": "meta.GetBoolean('access_zone1') == true && meta.GetBoolean('checked_in_zone1') == false",
+                "then": [
+                    "meta.SetBoolean('checked_in_zone1', true)"
+                ]
+            }
+        ],
+        "nft_attributes_value": []
+    },
+    "system_actioners": [
+        "6x1x40vralnch8yq3ztc5urz6cnqzuwx43rnlcwjg",
+        "6x1fklaucr9xtxtw47wj9w8e9luydprpmdmu3zjaw"
+    ],
+    "mint_authorization": "system"
+}

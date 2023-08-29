@@ -35,7 +35,7 @@ const main = async () => {
     sixConnector.apiUrl = "https://api1.fivenet.sixprotocol.net:443";
     // const accountSigner = await sixConnector.accounts.privateKeyToAccount(process.env.PRIVATE_KEY);
     accountSigner = await sixConnector.accounts.mnemonicKeyToAccount(
-      process.env.MNEMONIC
+      process.env.MNEMONIC!
     );
   } else if (network === "sixnet") {
     // ** SIXNET **
@@ -43,7 +43,7 @@ const main = async () => {
     sixConnector.apiUrl = "https://sixnet-api.sixprotocol.net:443";
     // const accountSigner = await sixConnector.accounts.privateKeyToAccount(process.env.PRIVATE_KEY);
     accountSigner = await sixConnector.accounts.mnemonicKeyToAccount(
-      process.env.TECHSAUCE_MNEMONIC
+      process.env.TECHSAUCE_MNEMONIC!
     );
   } else {
     throw new Error("Invalid network");

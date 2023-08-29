@@ -196,3 +196,5 @@ cache
 artifacts
 
 *.DS_store
+
+.secret

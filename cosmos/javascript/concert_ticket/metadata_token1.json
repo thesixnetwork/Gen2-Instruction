@@ -1,0 +1,19 @@
+{
+    "nft_schema_code": "bank.concert_ticket.v0.01",
+    "token_id": "1",
+    "token_owner": "6x1kcpchhaqacgx7qu0gwq8ym2k33fegmmvaxzd0f",
+    "owner_address_type": "INTERNAL_ADDRESS",
+    "origin_image": "https://yellow-cheap-leopard-795.mypinata.cloud/ipfs/QmV9BM2sShXJmgYaRimyEaXtTdfSUeUJNYicwxcRXaprDS/1.png",
+    "onchain_image": "",
+    "token_uri": "",
+    "origin_attributes": [],
+    "onchain_attributes": [
+      {
+        "name": "access_zone1",
+        "boolean_attribute_value": {
+          "value": true
+        },
+        "hidden_to_marketplace": false
+      }
+    ]
+  }
