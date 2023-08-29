@@ -20,5 +20,5 @@
     "strict": false,       
     "types": ["node"],
   },
-  "include": ["scripts/**/*", "sdk/**/*"]
+  "include": ["scripts/**/*", "sdk/**/*", "../scripts/set_base_uri.ts"]
 }

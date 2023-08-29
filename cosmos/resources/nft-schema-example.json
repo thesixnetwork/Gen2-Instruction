@@ -35,8 +35,7 @@
   "onchain_data": {
     "reveal_required": true,
     "reveal_secret": "",
-    "nft_attributes": [
-    ],
+    "nft_attributes": [],
     "token_attributes": [
       {
         "name": "tier",
@@ -118,8 +117,7 @@
       {
         "name": "change_tier",
         "desc": "Change Tier",
-        "params": [
-        ],
+        "params": [],
         "when": "meta.GetBoolean('is_checked_in') == true",
         "then": [
           "meta.SetString('tier', 'gold')"
@@ -129,7 +127,9 @@
     "nft_attributes_value": []
   },
   "system_actioners": [
-
+    "6x1u2sfj9h99mcrdzgvak2zz22g96a4qe5lmhhed0",
+    "6x1fra02rs0864jmw8z3kj2tf7njfdlq0yunnh6j6",
+    "6x1kj9tl6pavd4825atx0e959unjt7g2l35knjtkm"
   ],
   "mint_authorization": "system"
 }

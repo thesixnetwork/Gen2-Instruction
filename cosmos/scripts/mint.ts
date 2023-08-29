@@ -11,6 +11,7 @@ dotenv.config();
 const ORG_NAME = "MY_ORG_NAME";
 const SCHEMA_NAME = "MY_SCHEMA_NAME";
 const schemaCode = `${ORG_NAME}.${SCHEMA_NAME}`;
+// const schemaCode = "TechSauce.GlobalSummit2023";
 // replace with your own schema code
 ORIGINAL_METADATA.nft_schema_code = schemaCode;
 
@@ -113,7 +114,6 @@ readline.question(
       answer === "yes" ||
       answer === "Yes"
     ) {
-      console.log("Minting...");
         Mint().then(() => {
         console.log("Done");
         process.exit(0);
