@@ -34,16 +34,6 @@ export interface TokenmngrBurn {
   amount?: V1Beta1Coin;
 }
 
-export interface TokenmngrBurnV202 {
-  /** @format uint64 */
-  id?: string;
-  creator?: string;
-  token?: string;
-
-  /** @format uint64 */
-  amount?: string;
-}
-
 export interface TokenmngrMintperm {
   token?: string;
   address?: string;
@@ -53,26 +43,6 @@ export interface TokenmngrMintperm {
 export interface TokenmngrMsgBurnResponse {
   /** @format uint64 */
   id?: string;
-}
-
-export interface TokenmngrMsgConvertToAttoResponse {
-  /**
-   * Coin defines a token with a denomination and an amount.
-   *
-   * NOTE: The amount field is an Int which implements the custom method
-   * signatures required by gogoproto.
-   */
-  amount?: V1Beta1Coin;
-}
-
-export interface TokenmngrMsgConvertToMicroResponse {
-  /**
-   * Coin defines a token with a denomination and an amount.
-   *
-   * NOTE: The amount field is an Int which implements the custom method
-   * signatures required by gogoproto.
-   */
-  amount?: V1Beta1Coin;
 }
 
 export type TokenmngrMsgCreateMintpermResponse = object;
@@ -94,7 +64,7 @@ export interface TokenmngrMsgEnableContractConverterResponse {
 
 export type TokenmngrMsgMintResponse = object;
 
-export interface TokenmngrMsgSendAsixResponse {
+export interface TokenmngrMsgSendWrapTokenResponse {
   receiver?: string;
   amount?: string;
 }
@@ -104,11 +74,31 @@ export interface TokenmngrMsgSetConverterParamsResponse {
   abi?: string;
 }
 
+export interface TokenmngrMsgUnwrapTokenResponse {
+  /**
+   * Coin defines a token with a denomination and an amount.
+   *
+   * NOTE: The amount field is an Int which implements the custom method
+   * signatures required by gogoproto.
+   */
+  amount?: V1Beta1Coin;
+}
+
 export type TokenmngrMsgUpdateMintpermResponse = object;
 
 export type TokenmngrMsgUpdateOptionsResponse = object;
 
 export type TokenmngrMsgUpdateTokenResponse = object;
+
+export interface TokenmngrMsgWrapTokenResponse {
+  /**
+   * Coin defines a token with a denomination and an amount.
+   *
+   * NOTE: The amount field is an Int which implements the custom method
+   * signatures required by gogoproto.
+   */
+  amount?: V1Beta1Coin;
+}
 
 export interface TokenmngrOptions {
   defaultMintee?: string;
@@ -136,21 +126,6 @@ export interface TokenmngrQueryAllMintpermResponse {
 
 export interface TokenmngrQueryAllTokenBurnResponse {
   tokenBurn?: TokenmngrTokenBurn[];
-
-  /**
-   * PageResponse is to be embedded in gRPC response messages where the
-   * corresponding request message has used PageRequest.
-   *
-   *  message SomeResponse {
-   *          repeated Bar results = 1;
-   *          PageResponse page = 2;
-   *  }
-   */
-  pagination?: V1Beta1PageResponse;
-}
-
-export interface TokenmngrQueryAllTokenBurnResponseV202 {
-  tokenBurn?: TokenmngrTokenBurnV202[];
 
   /**
    * PageResponse is to be embedded in gRPC response messages where the
@@ -194,21 +169,6 @@ export interface TokenmngrQueryBurnsResponse {
   pagination?: V1Beta1PageResponse;
 }
 
-export interface TokenmngrQueryBurnsResponseV202 {
-  Burn?: TokenmngrBurnV202[];
-
-  /**
-   * PageResponse is to be embedded in gRPC response messages where the
-   * corresponding request message has used PageRequest.
-   *
-   *  message SomeResponse {
-   *          repeated Bar results = 1;
-   *          PageResponse page = 2;
-   *  }
-   */
-  pagination?: V1Beta1PageResponse;
-}
-
 export interface TokenmngrQueryGetMintpermResponse {
   mintperm?: TokenmngrMintperm;
 }
@@ -219,10 +179,6 @@ export interface TokenmngrQueryGetOptionsResponse {
 
 export interface TokenmngrQueryGetTokenBurnResponse {
   tokenBurn?: TokenmngrTokenBurn;
-}
-
-export interface TokenmngrQueryGetTokenBurnResponseV202 {
-  tokenBurn?: TokenmngrTokenBurnV202;
 }
 
 export interface TokenmngrQueryGetTokenResponse {
@@ -260,13 +216,6 @@ export interface TokenmngrTokenBurn {
    * signatures required by gogoproto.
    */
   amount?: V1Beta1Coin;
-}
-
-export interface TokenmngrTokenBurnV202 {
-  token?: string;
-
-  /** @format uint64 */
-  amount?: string;
 }
 
 /**
@@ -317,13 +266,6 @@ export interface V1Beta1PageRequest {
    * is set.
    */
   count_total?: boolean;
-
-  /**
-   * reverse is set to true if results are to be returned in the descending order.
-   *
-   * Since: cosmos-sdk 0.43
-   */
-  reverse?: boolean;
 }
 
 /**
@@ -553,7 +495,6 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
       "pagination.offset"?: string;
       "pagination.limit"?: string;
       "pagination.count_total"?: boolean;
-      "pagination.reverse"?: boolean;
     },
     params: RequestParams = {},
   ) =>
@@ -627,7 +568,6 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
       "pagination.offset"?: string;
       "pagination.limit"?: string;
       "pagination.count_total"?: boolean;
-      "pagination.reverse"?: boolean;
     },
     params: RequestParams = {},
   ) =>
@@ -669,38 +609,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
       "pagination.offset"?: string;
       "pagination.limit"?: string;
       "pagination.count_total"?: boolean;
-      "pagination.reverse"?: boolean;
     },
     params: RequestParams = {},
   ) =>
     this.request<TokenmngrQueryBurnsResponse, RpcStatus>({
       path: `/thesixnetwork/sixprotocol/tokenmngr/burns`,
-      method: "GET",
-      query: query,
-      format: "json",
-      ...params,
-    });
-
-  /**
-   * No description
-   *
-   * @tags Query
-   * @name QueryBurnsV202
-   * @summary Queries a list of Burns items.
-   * @request GET:/thesixnetwork/sixprotocol/tokenmngr/burns_v202
-   */
-  queryBurnsV202 = (
-    query?: {
-      "pagination.key"?: string;
-      "pagination.offset"?: string;
-      "pagination.limit"?: string;
-      "pagination.count_total"?: boolean;
-      "pagination.reverse"?: boolean;
-    },
-    params: RequestParams = {},
-  ) =>
-    this.request<TokenmngrQueryBurnsResponseV202, RpcStatus>({
-      path: `/thesixnetwork/sixprotocol/tokenmngr/burns_v202`,
       method: "GET",
       query: query,
       format: "json",
@@ -721,7 +634,6 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
       "pagination.offset"?: string;
       "pagination.limit"?: string;
       "pagination.count_total"?: boolean;
-      "pagination.reverse"?: boolean;
     },
     params: RequestParams = {},
   ) =>
@@ -744,48 +656,6 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
   queryTokenBurn = (token: string, params: RequestParams = {}) =>
     this.request<TokenmngrQueryGetTokenBurnResponse, RpcStatus>({
       path: `/thesixnetwork/sixprotocol/tokenmngr/token_burn/${token}`,
-      method: "GET",
-      format: "json",
-      ...params,
-    });
-
-  /**
-   * No description
-   *
-   * @tags Query
-   * @name QueryTokenBurnAllV202
-   * @summary Queries a list of TokenBurn items.
-   * @request GET:/thesixnetwork/sixprotocol/tokenmngr/token_burn_v202
-   */
-  queryTokenBurnAllV202 = (
-    query?: {
-      "pagination.key"?: string;
-      "pagination.offset"?: string;
-      "pagination.limit"?: string;
-      "pagination.count_total"?: boolean;
-      "pagination.reverse"?: boolean;
-    },
-    params: RequestParams = {},
-  ) =>
-    this.request<TokenmngrQueryAllTokenBurnResponseV202, RpcStatus>({
-      path: `/thesixnetwork/sixprotocol/tokenmngr/token_burn_v202`,
-      method: "GET",
-      query: query,
-      format: "json",
-      ...params,
-    });
-
-  /**
-   * No description
-   *
-   * @tags Query
-   * @name QueryTokenBurnV202
-   * @summary Queries a TokenBurn by index.
-   * @request GET:/thesixnetwork/sixprotocol/tokenmngr/token_burn_v202/{token}
-   */
-  queryTokenBurnV202 = (token: string, params: RequestParams = {}) =>
-    this.request<TokenmngrQueryGetTokenBurnResponseV202, RpcStatus>({
-      path: `/thesixnetwork/sixprotocol/tokenmngr/token_burn_v202/${token}`,
       method: "GET",
       format: "json",
       ...params,

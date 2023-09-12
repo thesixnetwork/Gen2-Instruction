@@ -6,19 +6,12 @@ import { OfflineSigner } from "@cosmjs/proto-signing";
 import * as nftmngrModuleGenerate from "../modules/sixnft/thesixnetwork.sixnft.nftmngr/module/index"
 import * as nftoracleModuleGenerate from "../modules/sixnft/thesixnetwork.sixnft.nftoracle/module/index"
 import * as nftadminModuleGenerate from "../modules/sixnft/thesixnetwork.sixnft.nftadmin/module/index"
-import * as sixprotocolprotocoladminModuleGenerate from "../modules/six-protocol/thesixnetwork.sixprotocol.protocoladmin/module/index"
-import * as sixprotocoltokenmngrModuleGenerate from "../modules/six-protocol/thesixnetwork.sixprotocol.tokenmngr/module/index"
-
-// Ethermint 
-import * as evmModuleGenerate from "../modules/evmos/ethermint/ethermint.evm.v1/module/index"
-import * as erc20ModuleGenerate from "../modules/evmos/v6/evmos.erc20.v1/module/index"
-
-// Cosmos
+import * as tokenmngrModuleGenerate from "../modules/six-protocol/thesixnetwork.sixprotocol.tokenmngr/module/index"
+import * as protocoladminModuleGenerate from "../modules/six-protocol/thesixnetwork.sixprotocol.protocoladmin/module/index"
 import * as cosmosbankModuleGenerate from "../modules/cosmos/cosmos-sdk/cosmos.bank.v1beta1/module/index"
 import * as cosmosstakingModuleGenerate from "../modules/cosmos/cosmos-sdk/cosmos.staking.v1beta1/module/index"
-import * as cosmosgovModuleGenerate from "../modules/cosmos/cosmos-sdk/cosmos.gov.v1beta1/module/index"
-import * as cosmosdistributionModuleGenerate from "../modules/cosmos/cosmos-sdk/cosmos.distribution.v1beta1/module/index"
-
+import * as cosmosTx from "../modules/cosmos/cosmos-sdk/cosmos.tx.v1beta1/module/index"
+import * as distributionModuleGenerate from "../modules/cosmos/cosmos-sdk/cosmos.distribution.v1beta1/module/index"
 
 type Module = {
     txClient: (wallet: any, options: any) => Promise<any>
@@ -51,48 +44,36 @@ export class SixDataChainConnector {
 
     connectAPIClient = async () => {
         const [
-            nftmngrModule, // 1
-            nftoracleModule, //2 
-            nftAdminModule, //3
-            sixprotocolProtocolAdminModule, //4
-            sixprotocolTokenmngrModule, //5
-            // cosmos
-            cosmosBankModule, //6
-            cosmosStakingModule, //7
-            cosmosGovModule, //8
-            cosmosDistributionModule, //9
-            // ethermint
-            evmModule, //10
-            erc20Module //11
-        ] = await Promise.all([
-            nftmngrModuleGenerate.queryClient({ addr: this.apiUrl }), // 1
-            nftoracleModuleGenerate.queryClient({ addr: this.apiUrl }), //2 
-            nftadminModuleGenerate.queryClient({ addr: this.apiUrl }), //3
-            sixprotocolprotocoladminModuleGenerate.queryClient({ addr: this.apiUrl }), //4
-            sixprotocoltokenmngrModuleGenerate.queryClient({ addr: this.apiUrl }), //5
-            // cosmos 
-            cosmosbankModuleGenerate.queryClient({ addr: this.apiUrl }), //6
-            cosmosstakingModuleGenerate.queryClient({ addr: this.apiUrl }), //7
-            cosmosgovModuleGenerate.queryClient({ addr: this.apiUrl }), //8
-            cosmosdistributionModuleGenerate.queryClient({ addr: this.apiUrl }), //9
-            // ethermint
-            evmModuleGenerate.queryClient({ addr: this.apiUrl }), //10
-            erc20ModuleGenerate.queryClient({ addr: this.apiUrl }), //11
-        ])
-        return {
-            nftmngrModule, // 1
-            nftoracleModule, //2
-            nftAdminModule, //3
-            sixprotocolProtocolAdminModule, //4
-            sixprotocolTokenmngrModule, //5
-            // cosmos
+            nftmngrModule,
+            nftoracleModule,
+            nftAdminModule,
+            tokenmngrModule,
+            protocolAdminModule,
             cosmosBankModule,
             cosmosStakingModule,
-            cosmosGovModule,
-            cosmosDistributionModule,
-            // ethermint
-            evmModule,
-            erc20Module
+            cosmosTxModule,
+            distributionModule
+        ] = await Promise.all([
+            nftmngrModuleGenerate.queryClient({ addr: this.apiUrl }),
+            nftoracleModuleGenerate.queryClient({ addr: this.apiUrl }),
+            nftadminModuleGenerate.queryClient({ addr: this.apiUrl }),
+            tokenmngrModuleGenerate.queryClient({ addr: this.apiUrl }),
+            protocoladminModuleGenerate.queryClient({ addr: this.apiUrl }),
+            cosmosbankModuleGenerate.queryClient({ addr: this.apiUrl }),
+            cosmosstakingModuleGenerate.queryClient({ addr: this.apiUrl }),
+            cosmosTx.queryClient({ addr: this.apiUrl }),
+            distributionModuleGenerate.queryClient({ addr: this.apiUrl })
+        ])
+        return {
+            nftmngrModule,
+            nftoracleModule,
+            nftAdminModule,
+            tokenmngrModule,
+            protocolAdminModule,
+            cosmosBankModule,
+            cosmosStakingModule,
+            cosmosTxModule,
+            distributionModule
         }
     }
 
@@ -108,45 +89,33 @@ export class SixDataChainConnector {
             nftmngrModule,
             nftadminModule,
             nftoracleModule,
-            sixprotocolProrocolAdminModule,
-            sixprotocolTokenmngrModule,
-            // cosmos
+            tokenmngrModule,
+            protocolAdminModule,
             cosmosBankModule,
             cosmosStakingModule,
-            cosmosGovModule,
-            cosmosDistributionModule,
-            // ethermint
-            evmModule,
-            erc20Module
+            cosmosTxModule,
+            distributionModule
         ] = await Promise.all([
             nftmngrModuleGenerate.txClient(accountSigner, { addr: this.rpcUrl },options),
             nftadminModuleGenerate.txClient(accountSigner, { addr: this.rpcUrl },options),
             nftoracleModuleGenerate.txClient(accountSigner, { addr: this.rpcUrl },options),
-            sixprotocolprotocoladminModuleGenerate.txClient(accountSigner, { addr: this.rpcUrl },options),
-            sixprotocoltokenmngrModuleGenerate.txClient(accountSigner, { addr: this.rpcUrl },options),
-            // cosmos
+            tokenmngrModuleGenerate.txClient(accountSigner, { addr: this.rpcUrl },options),
+            protocoladminModuleGenerate.txClient(accountSigner, { addr: this.rpcUrl },options),
             cosmosbankModuleGenerate.txClient(accountSigner, { addr: this.rpcUrl },options),
             cosmosstakingModuleGenerate.txClient(accountSigner, { addr: this.rpcUrl },options),
-            cosmosgovModuleGenerate.txClient(accountSigner, { addr: this.rpcUrl },options),
-            cosmosdistributionModuleGenerate.txClient(accountSigner, { addr: this.rpcUrl },options),
-            // ethermint
-            evmModuleGenerate.txClient(accountSigner, { addr: this.rpcUrl },options),
-            erc20ModuleGenerate.txClient(accountSigner, { addr: this.rpcUrl },options),
+            cosmosTx.txClient(accountSigner,{ addr: this.rpcUrl },options),
+            distributionModuleGenerate.txClient(accountSigner,{ addr: this.rpcUrl },options)
         ])
         return {
             nftmngrModule,
             nftadminModule,
             nftoracleModule,
-            sixprotocolProrocolAdminModule,
-            sixprotocolTokenmngrModule,
-            // cosmos
+            tokenmngrModule,
+            protocolAdminModule,
             cosmosBankModule,
             cosmosStakingModule,
-            cosmosGovModule,
-            cosmosDistributionModule,
-            // ethermint
-            evmModule,
-            erc20Module
+            cosmosTxModule,
+            distributionModule
         }
     }
 
@@ -154,6 +123,30 @@ export class SixDataChainConnector {
         if (url[url.length - 1] === "/") return url.slice(0, -1)
         return url
     }
+    // switch(module) {
+    //     case "nftmngrModule": return await nftmngrModule.queryClient()
+    //     case "evmsupportModule": return await evmsupportModule.queryClient()
+    //     default:
+    //         throw new Error("Module not found")
+    // }
+
 }
+    // InitQueryClient = async (
+    //     module: "nftmngrModule" | "evmsupportModule" | "adminModule" | "nftoracleModule",
+    //     addr: string
+    // ) => {
+    //     switch (module) {
+    //         case "nftmngrModule":
+    //             return await this.modules.nftmngrModule.queryClient({ addr: addr })
+    //         case "evmsupportModule":
+    //             return await this.modules.evmsupportModule.queryClient({ addr: addr })
+    //         case "adminModule":
+    //             return await this.modules.adminModule.queryClient({ addr: addr })
+    //         case "nftoracleModule":
+    //             return <Api>(await this.modules.nftoracleModule.queryClient({ addr: addr }))
+    //     }
+    // }
+
+
 
 

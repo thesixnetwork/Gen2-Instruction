@@ -8,8 +8,8 @@ dotenv.config();
 
 import exmapleSchema from "../resources/nft-schema-example.json";
 
-const ORG_NAME = "MY_ORG_NAME";
-const SCHEMA_NAME = "MY_SCHEMA_NAME";
+const ORG_NAME = "BossGen2";
+const SCHEMA_NAME = "2neGssoB";
 const schemaCode = `${ORG_NAME}.${SCHEMA_NAME}`;
 // const schemaCode = "TechSauce.GlobalSummit2023";
 exmapleSchema.code = schemaCode
@@ -33,7 +33,7 @@ export const Deploy = async () => {
     sixConnector.rpcUrl = "https://rpc2.fivenet.sixprotocol.net:443";
     // const accountSigner = await sixConnector.accounts.privateKeyToAccount(process.env.PRIVATE_KEY);
     accountSigner = await sixConnector.accounts.mnemonicKeyToAccount(
-      process.env.ADDRESS_KLANG_MNEMONIC
+      process.env.MNEMONIC!
     );
   } else if (network === "sixnet") {
     // ** SIXNET **

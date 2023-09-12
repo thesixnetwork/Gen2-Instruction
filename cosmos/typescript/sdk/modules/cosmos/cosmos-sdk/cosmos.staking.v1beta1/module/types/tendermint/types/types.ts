@@ -2,9 +2,9 @@
 import { Timestamp } from "../../google/protobuf/timestamp";
 import * as Long from "long";
 import { util, configure, Writer, Reader } from "protobufjs/minimal";
-import { Proof } from "../crypto/proof";
-import { Consensus } from "../version/types";
-import { ValidatorSet } from "./validator";
+import { Proof } from "../../tendermint/crypto/proof";
+import { Consensus } from "../../tendermint/version/types";
+import { ValidatorSet } from "../../tendermint/types/validator";
 
 export const protobufPackage = "tendermint.types";
 

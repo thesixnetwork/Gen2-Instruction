@@ -8,7 +8,7 @@ let txn;
 let hash;
 
 async function main() {
-  const factory = await ethers.getContractFactory("TechSauce");
+  const factory = await ethers.getContractFactory("MyNFT");
   const contract = await factory.attach(deployedContractAddress);
 
   let base_uri;

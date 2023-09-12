@@ -91,23 +91,23 @@ export interface MsgDeleteOptions {
 
 export interface MsgDeleteOptionsResponse {}
 
-export interface MsgConvertToAtto {
+export interface MsgWrapToken {
   creator: string;
   amount: Coin | undefined;
   receiver: string;
 }
 
-export interface MsgConvertToAttoResponse {
+export interface MsgWrapTokenResponse {
   amount: Coin | undefined;
 }
 
-export interface MsgConvertToMicro {
+export interface MsgUnwrapToken {
   creator: string;
   amount: Coin | undefined;
   receiver: string;
 }
 
-export interface MsgConvertToMicroResponse {
+export interface MsgUnwrapTokenResponse {
   amount: Coin | undefined;
 }
 
@@ -134,13 +134,13 @@ export interface MsgEnableContractConverterResponse {
   enable: boolean;
 }
 
-export interface MsgSendAsix {
+export interface MsgSendWrapToken {
   creator: string;
   ethAddress: string;
   amount: Coin | undefined;
 }
 
-export interface MsgSendAsixResponse {
+export interface MsgSendWrapTokenResponse {
   receiver: string;
   amount: string;
 }
@@ -1591,10 +1591,10 @@ export const MsgDeleteOptionsResponse = {
   },
 };
 
-const baseMsgConvertToAtto: object = { creator: "", receiver: "" };
+const baseMsgWrapToken: object = { creator: "", receiver: "" };
 
-export const MsgConvertToAtto = {
-  encode(message: MsgConvertToAtto, writer: Writer = Writer.create()): Writer {
+export const MsgWrapToken = {
+  encode(message: MsgWrapToken, writer: Writer = Writer.create()): Writer {
     if (message.creator !== "") {
       writer.uint32(10).string(message.creator);
     }
@@ -1607,10 +1607,10 @@ export const MsgConvertToAtto = {
     return writer;
   },
 
-  decode(input: Reader | Uint8Array, length?: number): MsgConvertToAtto {
+  decode(input: Reader | Uint8Array, length?: number): MsgWrapToken {
     const reader = input instanceof Uint8Array ? new Reader(input) : input;
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseMsgConvertToAtto } as MsgConvertToAtto;
+    const message = { ...baseMsgWrapToken } as MsgWrapToken;
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1631,8 +1631,8 @@ export const MsgConvertToAtto = {
     return message;
   },
 
-  fromJSON(object: any): MsgConvertToAtto {
-    const message = { ...baseMsgConvertToAtto } as MsgConvertToAtto;
+  fromJSON(object: any): MsgWrapToken {
+    const message = { ...baseMsgWrapToken } as MsgWrapToken;
     if (object.creator !== undefined && object.creator !== null) {
       message.creator = String(object.creator);
     } else {
@@ -1651,7 +1651,7 @@ export const MsgConvertToAtto = {
     return message;
   },
 
-  toJSON(message: MsgConvertToAtto): unknown {
+  toJSON(message: MsgWrapToken): unknown {
     const obj: any = {};
     message.creator !== undefined && (obj.creator = message.creator);
     message.amount !== undefined &&
@@ -1660,8 +1660,8 @@ export const MsgConvertToAtto = {
     return obj;
   },
 
-  fromPartial(object: DeepPartial<MsgConvertToAtto>): MsgConvertToAtto {
-    const message = { ...baseMsgConvertToAtto } as MsgConvertToAtto;
+  fromPartial(object: DeepPartial<MsgWrapToken>): MsgWrapToken {
+    const message = { ...baseMsgWrapToken } as MsgWrapToken;
     if (object.creator !== undefined && object.creator !== null) {
       message.creator = object.creator;
     } else {
@@ -1681,11 +1681,11 @@ export const MsgConvertToAtto = {
   },
 };
 
-const baseMsgConvertToAttoResponse: object = {};
+const baseMsgWrapTokenResponse: object = {};
 
-export const MsgConvertToAttoResponse = {
+export const MsgWrapTokenResponse = {
   encode(
-    message: MsgConvertToAttoResponse,
+    message: MsgWrapTokenResponse,
     writer: Writer = Writer.create()
   ): Writer {
     if (message.amount !== undefined) {
@@ -1694,15 +1694,10 @@ export const MsgConvertToAttoResponse = {
     return writer;
   },
 
-  decode(
-    input: Reader | Uint8Array,
-    length?: number
-  ): MsgConvertToAttoResponse {
+  decode(input: Reader | Uint8Array, length?: number): MsgWrapTokenResponse {
     const reader = input instanceof Uint8Array ? new Reader(input) : input;
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseMsgConvertToAttoResponse,
-    } as MsgConvertToAttoResponse;
+    const message = { ...baseMsgWrapTokenResponse } as MsgWrapTokenResponse;
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1717,10 +1712,8 @@ export const MsgConvertToAttoResponse = {
     return message;
   },
 
-  fromJSON(object: any): MsgConvertToAttoResponse {
-    const message = {
-      ...baseMsgConvertToAttoResponse,
-    } as MsgConvertToAttoResponse;
+  fromJSON(object: any): MsgWrapTokenResponse {
+    const message = { ...baseMsgWrapTokenResponse } as MsgWrapTokenResponse;
     if (object.amount !== undefined && object.amount !== null) {
       message.amount = Coin.fromJSON(object.amount);
     } else {
@@ -1729,19 +1722,15 @@ export const MsgConvertToAttoResponse = {
     return message;
   },
 
-  toJSON(message: MsgConvertToAttoResponse): unknown {
+  toJSON(message: MsgWrapTokenResponse): unknown {
     const obj: any = {};
     message.amount !== undefined &&
       (obj.amount = message.amount ? Coin.toJSON(message.amount) : undefined);
     return obj;
   },
 
-  fromPartial(
-    object: DeepPartial<MsgConvertToAttoResponse>
-  ): MsgConvertToAttoResponse {
-    const message = {
-      ...baseMsgConvertToAttoResponse,
-    } as MsgConvertToAttoResponse;
+  fromPartial(object: DeepPartial<MsgWrapTokenResponse>): MsgWrapTokenResponse {
+    const message = { ...baseMsgWrapTokenResponse } as MsgWrapTokenResponse;
     if (object.amount !== undefined && object.amount !== null) {
       message.amount = Coin.fromPartial(object.amount);
     } else {
@@ -1751,10 +1740,10 @@ export const MsgConvertToAttoResponse = {
   },
 };
 
-const baseMsgConvertToMicro: object = { creator: "", receiver: "" };
+const baseMsgUnwrapToken: object = { creator: "", receiver: "" };
 
-export const MsgConvertToMicro = {
-  encode(message: MsgConvertToMicro, writer: Writer = Writer.create()): Writer {
+export const MsgUnwrapToken = {
+  encode(message: MsgUnwrapToken, writer: Writer = Writer.create()): Writer {
     if (message.creator !== "") {
       writer.uint32(10).string(message.creator);
     }
@@ -1767,10 +1756,10 @@ export const MsgConvertToMicro = {
     return writer;
   },
 
-  decode(input: Reader | Uint8Array, length?: number): MsgConvertToMicro {
+  decode(input: Reader | Uint8Array, length?: number): MsgUnwrapToken {
     const reader = input instanceof Uint8Array ? new Reader(input) : input;
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseMsgConvertToMicro } as MsgConvertToMicro;
+    const message = { ...baseMsgUnwrapToken } as MsgUnwrapToken;
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1791,8 +1780,8 @@ export const MsgConvertToMicro = {
     return message;
   },
 
-  fromJSON(object: any): MsgConvertToMicro {
-    const message = { ...baseMsgConvertToMicro } as MsgConvertToMicro;
+  fromJSON(object: any): MsgUnwrapToken {
+    const message = { ...baseMsgUnwrapToken } as MsgUnwrapToken;
     if (object.creator !== undefined && object.creator !== null) {
       message.creator = String(object.creator);
     } else {
@@ -1811,7 +1800,7 @@ export const MsgConvertToMicro = {
     return message;
   },
 
-  toJSON(message: MsgConvertToMicro): unknown {
+  toJSON(message: MsgUnwrapToken): unknown {
     const obj: any = {};
     message.creator !== undefined && (obj.creator = message.creator);
     message.amount !== undefined &&
@@ -1820,8 +1809,8 @@ export const MsgConvertToMicro = {
     return obj;
   },
 
-  fromPartial(object: DeepPartial<MsgConvertToMicro>): MsgConvertToMicro {
-    const message = { ...baseMsgConvertToMicro } as MsgConvertToMicro;
+  fromPartial(object: DeepPartial<MsgUnwrapToken>): MsgUnwrapToken {
+    const message = { ...baseMsgUnwrapToken } as MsgUnwrapToken;
     if (object.creator !== undefined && object.creator !== null) {
       message.creator = object.creator;
     } else {
@@ -1841,11 +1830,11 @@ export const MsgConvertToMicro = {
   },
 };
 
-const baseMsgConvertToMicroResponse: object = {};
+const baseMsgUnwrapTokenResponse: object = {};
 
-export const MsgConvertToMicroResponse = {
+export const MsgUnwrapTokenResponse = {
   encode(
-    message: MsgConvertToMicroResponse,
+    message: MsgUnwrapTokenResponse,
     writer: Writer = Writer.create()
   ): Writer {
     if (message.amount !== undefined) {
@@ -1854,15 +1843,10 @@ export const MsgConvertToMicroResponse = {
     return writer;
   },
 
-  decode(
-    input: Reader | Uint8Array,
-    length?: number
-  ): MsgConvertToMicroResponse {
+  decode(input: Reader | Uint8Array, length?: number): MsgUnwrapTokenResponse {
     const reader = input instanceof Uint8Array ? new Reader(input) : input;
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = {
-      ...baseMsgConvertToMicroResponse,
-    } as MsgConvertToMicroResponse;
+    const message = { ...baseMsgUnwrapTokenResponse } as MsgUnwrapTokenResponse;
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1877,10 +1861,8 @@ export const MsgConvertToMicroResponse = {
     return message;
   },
 
-  fromJSON(object: any): MsgConvertToMicroResponse {
-    const message = {
-      ...baseMsgConvertToMicroResponse,
-    } as MsgConvertToMicroResponse;
+  fromJSON(object: any): MsgUnwrapTokenResponse {
+    const message = { ...baseMsgUnwrapTokenResponse } as MsgUnwrapTokenResponse;
     if (object.amount !== undefined && object.amount !== null) {
       message.amount = Coin.fromJSON(object.amount);
     } else {
@@ -1889,7 +1871,7 @@ export const MsgConvertToMicroResponse = {
     return message;
   },
 
-  toJSON(message: MsgConvertToMicroResponse): unknown {
+  toJSON(message: MsgUnwrapTokenResponse): unknown {
     const obj: any = {};
     message.amount !== undefined &&
       (obj.amount = message.amount ? Coin.toJSON(message.amount) : undefined);
@@ -1897,11 +1879,9 @@ export const MsgConvertToMicroResponse = {
   },
 
   fromPartial(
-    object: DeepPartial<MsgConvertToMicroResponse>
-  ): MsgConvertToMicroResponse {
-    const message = {
-      ...baseMsgConvertToMicroResponse,
-    } as MsgConvertToMicroResponse;
+    object: DeepPartial<MsgUnwrapTokenResponse>
+  ): MsgUnwrapTokenResponse {
+    const message = { ...baseMsgUnwrapTokenResponse } as MsgUnwrapTokenResponse;
     if (object.amount !== undefined && object.amount !== null) {
       message.amount = Coin.fromPartial(object.amount);
     } else {
@@ -2330,10 +2310,10 @@ export const MsgEnableContractConverterResponse = {
   },
 };
 
-const baseMsgSendAsix: object = { creator: "", ethAddress: "" };
+const baseMsgSendWrapToken: object = { creator: "", ethAddress: "" };
 
-export const MsgSendAsix = {
-  encode(message: MsgSendAsix, writer: Writer = Writer.create()): Writer {
+export const MsgSendWrapToken = {
+  encode(message: MsgSendWrapToken, writer: Writer = Writer.create()): Writer {
     if (message.creator !== "") {
       writer.uint32(10).string(message.creator);
     }
@@ -2346,10 +2326,10 @@ export const MsgSendAsix = {
     return writer;
   },
 
-  decode(input: Reader | Uint8Array, length?: number): MsgSendAsix {
+  decode(input: Reader | Uint8Array, length?: number): MsgSendWrapToken {
     const reader = input instanceof Uint8Array ? new Reader(input) : input;
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseMsgSendAsix } as MsgSendAsix;
+    const message = { ...baseMsgSendWrapToken } as MsgSendWrapToken;
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2370,8 +2350,8 @@ export const MsgSendAsix = {
     return message;
   },
 
-  fromJSON(object: any): MsgSendAsix {
-    const message = { ...baseMsgSendAsix } as MsgSendAsix;
+  fromJSON(object: any): MsgSendWrapToken {
+    const message = { ...baseMsgSendWrapToken } as MsgSendWrapToken;
     if (object.creator !== undefined && object.creator !== null) {
       message.creator = String(object.creator);
     } else {
@@ -2390,7 +2370,7 @@ export const MsgSendAsix = {
     return message;
   },
 
-  toJSON(message: MsgSendAsix): unknown {
+  toJSON(message: MsgSendWrapToken): unknown {
     const obj: any = {};
     message.creator !== undefined && (obj.creator = message.creator);
     message.ethAddress !== undefined && (obj.ethAddress = message.ethAddress);
@@ -2399,8 +2379,8 @@ export const MsgSendAsix = {
     return obj;
   },
 
-  fromPartial(object: DeepPartial<MsgSendAsix>): MsgSendAsix {
-    const message = { ...baseMsgSendAsix } as MsgSendAsix;
+  fromPartial(object: DeepPartial<MsgSendWrapToken>): MsgSendWrapToken {
+    const message = { ...baseMsgSendWrapToken } as MsgSendWrapToken;
     if (object.creator !== undefined && object.creator !== null) {
       message.creator = object.creator;
     } else {
@@ -2420,11 +2400,11 @@ export const MsgSendAsix = {
   },
 };
 
-const baseMsgSendAsixResponse: object = { receiver: "", amount: "" };
+const baseMsgSendWrapTokenResponse: object = { receiver: "", amount: "" };
 
-export const MsgSendAsixResponse = {
+export const MsgSendWrapTokenResponse = {
   encode(
-    message: MsgSendAsixResponse,
+    message: MsgSendWrapTokenResponse,
     writer: Writer = Writer.create()
   ): Writer {
     if (message.receiver !== "") {
@@ -2436,10 +2416,15 @@ export const MsgSendAsixResponse = {
     return writer;
   },
 
-  decode(input: Reader | Uint8Array, length?: number): MsgSendAsixResponse {
+  decode(
+    input: Reader | Uint8Array,
+    length?: number
+  ): MsgSendWrapTokenResponse {
     const reader = input instanceof Uint8Array ? new Reader(input) : input;
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = { ...baseMsgSendAsixResponse } as MsgSendAsixResponse;
+    const message = {
+      ...baseMsgSendWrapTokenResponse,
+    } as MsgSendWrapTokenResponse;
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2457,8 +2442,10 @@ export const MsgSendAsixResponse = {
     return message;
   },
 
-  fromJSON(object: any): MsgSendAsixResponse {
-    const message = { ...baseMsgSendAsixResponse } as MsgSendAsixResponse;
+  fromJSON(object: any): MsgSendWrapTokenResponse {
+    const message = {
+      ...baseMsgSendWrapTokenResponse,
+    } as MsgSendWrapTokenResponse;
     if (object.receiver !== undefined && object.receiver !== null) {
       message.receiver = String(object.receiver);
     } else {
@@ -2472,15 +2459,19 @@ export const MsgSendAsixResponse = {
     return message;
   },
 
-  toJSON(message: MsgSendAsixResponse): unknown {
+  toJSON(message: MsgSendWrapTokenResponse): unknown {
     const obj: any = {};
     message.receiver !== undefined && (obj.receiver = message.receiver);
     message.amount !== undefined && (obj.amount = message.amount);
     return obj;
   },
 
-  fromPartial(object: DeepPartial<MsgSendAsixResponse>): MsgSendAsixResponse {
-    const message = { ...baseMsgSendAsixResponse } as MsgSendAsixResponse;
+  fromPartial(
+    object: DeepPartial<MsgSendWrapTokenResponse>
+  ): MsgSendWrapTokenResponse {
+    const message = {
+      ...baseMsgSendWrapTokenResponse,
+    } as MsgSendWrapTokenResponse;
     if (object.receiver !== undefined && object.receiver !== null) {
       message.receiver = object.receiver;
     } else {
@@ -2514,10 +2505,8 @@ export interface Msg {
   UpdateOptions(request: MsgUpdateOptions): Promise<MsgUpdateOptionsResponse>;
   DeleteOptions(request: MsgDeleteOptions): Promise<MsgDeleteOptionsResponse>;
   Burn(request: MsgBurn): Promise<MsgBurnResponse>;
-  ConvertToAtto(request: MsgConvertToAtto): Promise<MsgConvertToAttoResponse>;
-  ConvertToMicro(
-    request: MsgConvertToMicro
-  ): Promise<MsgConvertToMicroResponse>;
+  WrapToken(request: MsgWrapToken): Promise<MsgWrapTokenResponse>;
+  UnwrapToken(request: MsgUnwrapToken): Promise<MsgUnwrapTokenResponse>;
   SetConverterParams(
     request: MsgSetConverterParams
   ): Promise<MsgSetConverterParamsResponse>;
@@ -2525,7 +2514,7 @@ export interface Msg {
     request: MsgEnableContractConverter
   ): Promise<MsgEnableContractConverterResponse>;
   /** this line is used by starport scaffolding # proto/tx/rpc */
-  SendAsix(request: MsgSendAsix): Promise<MsgSendAsixResponse>;
+  SendWrapToken(request: MsgSendWrapToken): Promise<MsgSendWrapTokenResponse>;
 }
 
 export class MsgClientImpl implements Msg {
@@ -2667,29 +2656,27 @@ export class MsgClientImpl implements Msg {
     return promise.then((data) => MsgBurnResponse.decode(new Reader(data)));
   }
 
-  ConvertToAtto(request: MsgConvertToAtto): Promise<MsgConvertToAttoResponse> {
-    const data = MsgConvertToAtto.encode(request).finish();
+  WrapToken(request: MsgWrapToken): Promise<MsgWrapTokenResponse> {
+    const data = MsgWrapToken.encode(request).finish();
     const promise = this.rpc.request(
       "thesixnetwork.sixprotocol.tokenmngr.Msg",
-      "ConvertToAtto",
+      "WrapToken",
       data
     );
     return promise.then((data) =>
-      MsgConvertToAttoResponse.decode(new Reader(data))
+      MsgWrapTokenResponse.decode(new Reader(data))
     );
   }
 
-  ConvertToMicro(
-    request: MsgConvertToMicro
-  ): Promise<MsgConvertToMicroResponse> {
-    const data = MsgConvertToMicro.encode(request).finish();
+  UnwrapToken(request: MsgUnwrapToken): Promise<MsgUnwrapTokenResponse> {
+    const data = MsgUnwrapToken.encode(request).finish();
     const promise = this.rpc.request(
       "thesixnetwork.sixprotocol.tokenmngr.Msg",
-      "ConvertToMicro",
+      "UnwrapToken",
       data
     );
     return promise.then((data) =>
-      MsgConvertToMicroResponse.decode(new Reader(data))
+      MsgUnwrapTokenResponse.decode(new Reader(data))
     );
   }
 
@@ -2721,14 +2708,16 @@ export class MsgClientImpl implements Msg {
     );
   }
 
-  SendAsix(request: MsgSendAsix): Promise<MsgSendAsixResponse> {
-    const data = MsgSendAsix.encode(request).finish();
+  SendWrapToken(request: MsgSendWrapToken): Promise<MsgSendWrapTokenResponse> {
+    const data = MsgSendWrapToken.encode(request).finish();
     const promise = this.rpc.request(
       "thesixnetwork.sixprotocol.tokenmngr.Msg",
-      "SendAsix",
+      "SendWrapToken",
       data
     );
-    return promise.then((data) => MsgSendAsixResponse.decode(new Reader(data)));
+    return promise.then((data) =>
+      MsgSendWrapTokenResponse.decode(new Reader(data))
+    );
   }
 }
 

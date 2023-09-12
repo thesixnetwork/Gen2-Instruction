@@ -14,7 +14,7 @@ if (util.Long !== Long) {
 - 4 export SignAndBroadcastOptions in all sixnft/{module name}/module/index
 export interface SignAndBroadcastOptions
 
-- 5 change from
+Find
 
 ```typescript
 interface SignAndBroadcastOptions {
@@ -23,7 +23,7 @@ interface SignAndBroadcastOptions {
 }
 ```
 
-to
+Replace
 
 ```typescript
 export interface SignAndBroadcastOptions {
@@ -32,41 +32,44 @@ export interface SignAndBroadcastOptions {
 }
 ```
 
-- 6 import {... ,SigningStargateClientOptions} from @cosmjs/stargate
-modify txClientOptions
-const txClient = async (wallet: OfflineSigner, { addr: addr }: TxClientOptions = { addr: "http://localhost:26657" }, options?: SigningStargateClientOptions) => {
+- 5 import {... ,SigningStargateClientOptions} from @cosmjs/stargate
 
-From
+Find
 
 ```typescript
 import { SigningStargateClient } from "@cosmjs/stargate";
 ```
 
-```typescript
-const txClient = async (wallet: OfflineSigner, { addr: addr }: TxClientOptions = { addr: "http://localhost:26657" }) => {
-```
-
-To
+Replace
 
 ```typescript
 import { SigningStargateClient, SigningStargateClientOptions} from "@cosmjs/stargate";
 ```
 
+- 6 add SigningStargateClientOptions to txClient
+
+Find
+
+```typescript
+const txClient = async (wallet: OfflineSigner, { addr: addr }: TxClientOptions = { addr: "http://localhost:26657" }) => {
+```
+
+Replace
+
 ```typescript
 const txClient = async (wallet: OfflineSigner, { addr: addr }: TxClientOptions = { addr: "http://localhost:26657" }, options?: SigningStargateClientOptions) => {
 ```
 
+- 7 add options to SigningStargateClient.connectWithSigner
 
-- 7 modify SigningStargateClient
-
-from
+Find
 
 ```typescript
 client = await SigningStargateClient.connectWithSigner(addr, wallet, { registry });
 ```
 
-To
+Replace
 
 ```typescript
-client = await SigningStargateClient.connectWithSigner(addr, wallet, { registry , ...options});
+client = await SigningStargateClient.connectWithSigner(addr, wallet, { registry, ...options});
 ```

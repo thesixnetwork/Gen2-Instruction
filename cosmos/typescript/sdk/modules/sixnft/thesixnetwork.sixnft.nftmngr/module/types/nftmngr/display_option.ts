@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { OpenseaDisplayOption } from "./opensea_display_option";
+import { OpenseaDisplayOption } from "../nftmngr/opensea_display_option";
 import { Writer, Reader } from "protobufjs/minimal";
 
 export const protobufPackage = "thesixnetwork.sixnft.nftmngr";
