@@ -1,0 +1,941 @@
+{
+  "nFTSchema": {
+    "code": "TechSauce.GlobalSummit2023",
+    "name": "Techsauce Global Summit 2023 | NFT Treasure Hunt",
+    "owner": "6x1v23u9k5c8pwm87jtvxwwmuzt8nj250xu4lr4vh",
+    "description": "Techsauce Global Summit 2023 | NFT Treasure Hunt",
+    "origin_data": {
+      "origin_chain": "SIXNET",
+      "origin_contract_address": "0xf9f00B7bA795cdc96dbE2153cBF51Ee46643ee1f",
+      "origin_base_uri": "https://ipfsgw.sixnetwork.io/ipfs/QmZvQMoiZzLdcdFAoWYj8tMchZNsyL3qMBKmxjUU164ibL/",
+      "attribute_overriding": "CHAIN",
+      "metadata_format": "opensea",
+      "origin_attributes": [
+        {
+          "name": "background",
+          "data_type": "string",
+          "required": false,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Background",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": null,
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "0"
+        },
+        {
+          "name": "caption",
+          "data_type": "string",
+          "required": false,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Caption",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": null,
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "1"
+        },
+        {
+          "name": "skin",
+          "data_type": "string",
+          "required": false,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Skin",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": null,
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "2"
+        },
+        {
+          "name": "hair",
+          "data_type": "string",
+          "required": false,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Hair",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": null,
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "3"
+        },
+        {
+          "name": "mouth",
+          "data_type": "string",
+          "required": false,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Mouth",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": null,
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "4"
+        },
+        {
+          "name": "costume",
+          "data_type": "string",
+          "required": false,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Costume",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": null,
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "5"
+        },
+        {
+          "name": "eyes",
+          "data_type": "string",
+          "required": false,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Eyes",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": null,
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "6"
+        }
+      ],
+      "uri_retrieval_method": "BASE"
+    },
+    "onchain_data": {
+      "nft_attributes": [
+        {
+          "name": "redemtion_tumbler",
+          "data_type": "float",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Tumbler Price",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "float_attribute_value": {
+              "value": 600
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": true,
+          "index": "7"
+        },
+        {
+          "name": "redemtion_cap",
+          "data_type": "float",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Cap Price",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "float_attribute_value": {
+              "value": 300
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": true,
+          "index": "8"
+        },
+        {
+          "name": "redemtion_namecard",
+          "data_type": "float",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Namecard Price",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "float_attribute_value": {
+              "value": 200
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": true,
+          "index": "9"
+        },
+        {
+          "name": "redemtion_g_namecard",
+          "data_type": "float",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Geo-Namecard Price",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "float_attribute_value": {
+              "value": 200
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": true,
+          "index": "10"
+        },
+        {
+          "name": "redemtion_tshirt",
+          "data_type": "float",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "T-Shirt Price",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "float_attribute_value": {
+              "value": 250
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": true,
+          "index": "11"
+        }
+      ],
+      "token_attributes": [
+        {
+          "name": "caption",
+          "data_type": "string",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Caption",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "string_attribute_value": {
+              "value": ""
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "12"
+        },
+        {
+          "name": "points",
+          "data_type": "float",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Points",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "float_attribute_value": {
+              "value": 0
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "13"
+        },
+        {
+          "name": "techsauce_booth",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Booth Techsauce",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "14"
+        },
+        {
+          "name": "bussiness_zone",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Bussiness Matching Zone",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "15"
+        },
+        {
+          "name": "relax_zone",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Relaxing Zone",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "16"
+        },
+        {
+          "name": "exp_zone",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Experiencing Zone",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "17"
+        },
+        {
+          "name": "stage_count",
+          "data_type": "number",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Attend Stage",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "number_attribute_value": {
+              "value": "0"
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "18"
+        },
+        {
+          "name": "stage_1",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Main Stage",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "19"
+        },
+        {
+          "name": "stage_2",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Climate Tech/FinTech Stage",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "20"
+        },
+        {
+          "name": "stage_3",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "FoodTech/ HealthTech/ Starup Stage",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "21"
+        },
+        {
+          "name": "stage_4",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Digital Tranformation Stage",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "22"
+        },
+        {
+          "name": "stage_5",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Corporate Innovation/ Web3 Stage",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "23"
+        },
+        {
+          "name": "exhibition_count",
+          "data_type": "number",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Exhibition Zone",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "number_attribute_value": {
+              "value": "0"
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "24"
+        },
+        {
+          "name": "exhibition_a",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Exhibition Zone A",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "25"
+        },
+        {
+          "name": "exhibition_b",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Exhibition Zone B",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "26"
+        },
+        {
+          "name": "exhibition_c",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Exhibition Zone C",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "27"
+        },
+        {
+          "name": "cvc_zone",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "CVC Zone",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "28"
+        },
+        {
+          "name": "after_party_claimed",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Claimed After Party Privileges",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "29"
+        },
+        {
+          "name": "voucher_claimed",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Claimed Voucher Privileges",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "30"
+        },
+        {
+          "name": "minor_count",
+          "data_type": "float",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Number Of Minors events",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "float_attribute_value": {
+              "value": 0
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "31"
+        },
+        {
+          "name": "stage_points",
+          "data_type": "float",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "",
+            "bool_false_value": "",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Points From Stage",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "float_attribute_value": {
+              "value": 0
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": true,
+          "index": "32"
+        },
+        {
+          "name": "redemtion_used",
+          "data_type": "boolean",
+          "required": true,
+          "display_value_field": "value",
+          "display_option": {
+            "bool_true_value": "Yes",
+            "bool_false_value": "No",
+            "opensea": {
+              "display_type": "",
+              "trait_type": "Redemption Used",
+              "max_value": "0"
+            }
+          },
+          "default_mint_value": {
+            "boolean_attribute_value": {
+              "value": false
+            }
+          },
+          "hidden_overide": false,
+          "hidden_to_marketplace": false,
+          "index": "33"
+        }
+      ],
+      "actions": [
+        {
+          "name": "check_in",
+          "desc": "Attend to TechSauce Booth",
+          "disable": false,
+          "when": "meta.GetBoolean('techsauce_booth') == false",
+          "then": [
+            "meta.SetFloat('points', meta.GetFloat('points') + 50.0)",
+            "meta.SetBoolean('techsauce_booth', true)",
+            "max_minor = Max(meta.GetFloat('minor_count')-5.0,-1.0)",
+            "meta.SetFloat('minor_count', meta.GetFloat('minor_count')+Abs(max_minor))"
+          ],
+          "allowed_actioner": "ALLOWED_ACTIONER_ALL",
+          "params": []
+        },
+        {
+          "name": "attend_zone",
+          "desc": "Attend to zone",
+          "disable": false,
+          "when": "meta.GetBoolean(params['zone'].GetString()) == false",
+          "then": [
+            "meta.SetFloat('points', meta.GetFloat('points') + 70.0)",
+            "meta.SetBoolean(params['zone'].GetString(), true)",
+            "max_minor = Max(meta.GetFloat('minor_count')-5.0,-1.0)",
+            "meta.SetFloat('minor_count', meta.GetFloat('minor_count')+Abs(max_minor))"
+          ],
+          "allowed_actioner": "ALLOWED_ACTIONER_ALL",
+          "params": [
+            {
+              "name": "zone",
+              "desc": "zone attribute",
+              "data_type": "string",
+              "required": true,
+              "default_value": ""
+            }
+          ]
+        },
+        {
+          "name": "attend_exhibition",
+          "desc": "Attend partner exhibition",
+          "disable": false,
+          "when": "meta.GetBoolean(params['exhibition'].GetString()) == false",
+          "then": [
+            "meta.SetFloat('points', meta.GetFloat('points') + 50.0)",
+            "meta.SetBoolean(params['exhibition'].GetString(), true)",
+            "meta.SetNumber('exhibition_count', meta.GetNumber('exhibition_count') + 1)",
+            "actual_exhibition_count = meta.GetNumber('exhibition_count') + 1",
+            "booth_count = Max(actual_exhibition_count-2.0,0.0)",
+            "max_minor = Max(meta.GetFloat('minor_count')-5.0,0-booth_count)",
+            "meta.SetFloat('minor_count', meta.GetFloat('minor_count')+Abs(max_minor))"
+          ],
+          "allowed_actioner": "ALLOWED_ACTIONER_ALL",
+          "params": [
+            {
+              "name": "exhibition",
+              "desc": "exhibition attribute",
+              "data_type": "string",
+              "required": true,
+              "default_value": ""
+            }
+          ]
+        },
+        {
+          "name": "attend_stage",
+          "desc": "Attend stage event",
+          "disable": false,
+          "when": "meta.GetBoolean(params['stage'].GetString()) == false",
+          "then": [
+            "max_ = Max(meta.GetFloat('stage_points')-400.0,-100.0)",
+            "meta.SetFloat('stage_points', meta.GetFloat('stage_points')+Abs(max_))",
+            "meta.SetFloat('points', meta.GetFloat('points')+Abs(max_))",
+            "meta.SetBoolean(params['stage'].GetString(), true)",
+            "meta.SetNumber('stage_count', meta.GetNumber('stage_count') + 1)"
+          ],
+          "allowed_actioner": "ALLOWED_ACTIONER_ALL",
+          "params": [
+            {
+              "name": "stage",
+              "desc": "Stage attribute",
+              "data_type": "string",
+              "required": true,
+              "default_value": ""
+            }
+          ]
+        },
+        {
+          "name": "redeem_prize",
+          "desc": "Redemtion points for prize",
+          "disable": false,
+          "when": "meta.GetString('caption') != 'Staff' && meta.GetString('caption') != 'Organizer' && meta.GetBoolean('redemtion_used') == false && meta.GetFloat('points') >= meta.GetFloat('redemtion_'+ params['stock'].GetString())",
+          "then": [
+            "meta.SetBoolean('redemtion_used', true)",
+            "meta.SetFloat('points', meta.GetFloat('points') - meta.GetFloat('redemtion_'+ params['stock'].GetString()))"
+          ],
+          "allowed_actioner": "ALLOWED_ACTIONER_ALL",
+          "params": [
+            {
+              "name": "stock",
+              "desc": "redemtion stock",
+              "data_type": "string",
+              "required": true,
+              "default_value": ""
+            }
+          ]
+        },
+        {
+          "name": "claim_after_party",
+          "desc": "Claim After Party",
+          "disable": false,
+          "when": "(meta.GetString('caption') == 'VIP' || meta.GetString('caption') == 'Speaker'|| meta.GetString('caption') == 'Investor') && meta.GetBoolean('after_party_claimed') == false || meta.GetString('caption') != 'Staff' && meta.GetString('caption') != 'Organizer' && meta.GetBoolean('after_party_claimed') == false && meta.GetNumber('stage_count') >= 4 && meta.GetFloat('minor_count') >= 4.0",
+          "then": [
+            "meta.SetBoolean('after_party_claimed', true)"
+          ],
+          "allowed_actioner": "ALLOWED_ACTIONER_ALL",
+          "params": []
+        },
+        {
+          "name": "claim_voucher",
+          "desc": "Voucher Redeemtion",
+          "disable": false,
+          "when": "meta.GetString('caption') != 'Staff' && meta.GetString('caption') != 'Organizer' && meta.GetBoolean('voucher_claimed') == false",
+          "then": [
+            "meta.SetBoolean('voucher_claimed', true)"
+          ],
+          "allowed_actioner": "ALLOWED_ACTIONER_ALL",
+          "params": []
+        },
+        {
+          "name": "change_price",
+          "desc": "Change Price of Redemtion",
+          "disable": false,
+          "when": "meta.GetString('caption') == 'Staff' || meta.GetString('caption') == 'Organizer'",
+          "then": [
+            "new_points = params['points'].GetNumber()",
+            "meta.SetFloat(params['stock'].GetString(), 0.0 + new_points)"
+          ],
+          "allowed_actioner": "ALLOWED_ACTIONER_SYSTEM_ONLY",
+          "params": [
+            {
+              "name": "stock",
+              "desc": "redemtion stock",
+              "data_type": "string",
+              "required": true,
+              "default_value": ""
+            },
+            {
+              "name": "points",
+              "desc": "New Point Value",
+              "data_type": "number",
+              "required": true,
+              "default_value": ""
+            }
+          ]
+        }
+      ],
+      "status": [
+        {
+          "status_name": "first_mint_complete",
+          "status_value": true
+        }
+      ]
+    },
+    "isVerified": false,
+    "mint_authorization": "system"
+  }
+}

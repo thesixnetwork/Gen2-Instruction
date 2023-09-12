@@ -11,6 +11,8 @@ export * as ITxNFTadmin from "./modules/sixnft/thesixnetwork.sixnft.nftadmin/mod
 // legacy code will be replicated and replaced with typesTxNFTOracle
 export * as fee from "@cosmjs/stargate/build/fee"
 
+export { NFTSchema } from  "./modules/sixnft/thesixnetwork.sixnft.nftmngr/module/types/nftmngr/nft_schema"
+
 // ############### COSMOSSDK ###############
 // ################### TX ##################
 export * as typesTxCosmosAuth from "./modules/cosmos/cosmos-sdk/cosmos.auth.v1beta1/module/types/cosmos/auth/v1beta1/auth"
